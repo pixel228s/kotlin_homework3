@@ -1,15 +1,14 @@
-package com.atiurin.sampleapp.testebi
+package com.atiurin.sampleapp.tests
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import com.atiurin.sampleapp.Steps.CustomClicksSteps
-import com.atiurin.sampleapp.Steps.FriendsChatSteps
-import com.atiurin.sampleapp.Steps.LandingPageSteps
-import com.atiurin.sampleapp.Steps.MainMenuSteps
 import com.atiurin.sampleapp.activity.MainActivity
 import com.atiurin.sampleapp.data.ConstantData
-import com.atiurin.sampleapp.tests.BaseTest
+import com.atiurin.sampleapp.steps.CustomClicksSteps
+import com.atiurin.sampleapp.steps.FriendsChatSteps
+import com.atiurin.sampleapp.steps.LandingPageSteps
+import com.atiurin.sampleapp.steps.MainMenuSteps
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -22,7 +21,7 @@ class GreetingTests : BaseTest() {
     val activityTestRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
-    fun testingTextingFunctional(){
+    fun testingTextingFunctional() {
         with(LandingPageSteps) {
             checkThatDashboardIsLoaded()
             openChatWithMyFriend(ConstantData.friendsName)
@@ -37,15 +36,15 @@ class GreetingTests : BaseTest() {
     }
 
     @Test
-    fun testingClicksFunctional(){
+    fun testingClicksFunctional() {
         with(LandingPageSteps) {
             checkThatDashboardIsLoaded()
             clickOnMainMenu()
         }
-        with(MainMenuSteps){
+        with(MainMenuSteps) {
             chooseMenuItem(ConstantData.customClicksItem)
         }
-        with(CustomClicksSteps){
+        with(CustomClicksSteps) {
             checkThatCustomClicksPageIsLoaded()
             markingCornerCircles()
             validateAllCornerCirclesAreChecked()

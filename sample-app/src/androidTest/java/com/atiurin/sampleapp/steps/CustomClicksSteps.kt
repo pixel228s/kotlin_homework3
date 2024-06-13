@@ -1,25 +1,24 @@
-package com.atiurin.sampleapp.Steps
+package com.atiurin.sampleapp.steps
 
-import com.atiurin.sampleapp.Pagess.CustomClicksPage
 import com.atiurin.sampleapp.helper.assertIsViewDisplayed
 import com.atiurin.sampleapp.helper.isChecked
-import com.atiurin.sampleapp.helper.tap
-
+import com.atiurin.sampleapp.pages.CustomClicksPage
+import com.atiurin.ultron.extensions.tap
 import org.junit.Assert
 
 object CustomClicksSteps {
 
-    fun checkThatCustomClicksPageIsLoaded(){
+    fun checkThatCustomClicksPageIsLoaded() {
         CustomClicksPage.cornersCube.assertIsViewDisplayed()
     }
 
-    fun markingCornerCircles(){
-        for(button in CustomClicksPage.buttonsInCorners){
-            button.tap(5)
+    fun markingCornerCircles() {
+        for (button in CustomClicksPage.buttonsInCorners) {
+            button.tap()
         }
     }
 
-    fun validateAllCornerCirclesAreChecked(){
+    fun validateAllCornerCirclesAreChecked() {
         for (btn in CustomClicksPage.buttonsInCorners) {
             Assert.assertTrue(btn.isChecked(5))
         }

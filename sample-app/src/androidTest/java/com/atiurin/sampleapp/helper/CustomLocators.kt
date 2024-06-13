@@ -7,7 +7,7 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
 fun getSentMessageWithText(message: String): Matcher<View> {
-    val message:  Matcher<View> by lazy {
+    val message: Matcher<View> by lazy {
         Matchers.allOf(
             ViewMatchers.withId(R.id.card_view),
             ViewMatchers.hasDescendant(
