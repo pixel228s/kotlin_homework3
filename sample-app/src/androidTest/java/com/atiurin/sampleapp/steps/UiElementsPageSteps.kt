@@ -13,7 +13,10 @@ import org.junit.Assert
 object UiElementsPageSteps {
 
     fun validatingUiElementsPageIsDisplayed() {
-        UiElementsPage.simpleButton.isDisplayed()
+        with(UiElementsPage) {
+            simpleButton.isDisplayed()
+            enableCheckbox.isDisplayed()
+        }
     }
 
     fun uncheckingEnableButton() {
