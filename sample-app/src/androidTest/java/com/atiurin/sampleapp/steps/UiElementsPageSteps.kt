@@ -14,7 +14,7 @@ object UiElementsPageSteps {
 
     fun validatingUiElementsPageIsDisplayed() {
         with(UiElementsPage) {
-            simpleButton.isDisplayed()
+            clickableCheckbox.isDisplayed()
             enableCheckbox.isDisplayed()
         }
     }
