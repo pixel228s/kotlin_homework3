@@ -25,6 +25,7 @@ import androidx.test.espresso.util.HumanReadables
 import androidx.test.espresso.util.TreeIterables
 import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.uiautomator.UiObject
+import com.atiurin.sampleapp.pages.LandingPage
 import org.hamcrest.*
 import org.hamcrest.Matchers.anyOf
 import java.util.concurrent.TimeoutException
@@ -501,6 +502,10 @@ fun swipeToTop() {
 // This scrolls up one page at a time
 fun scrollSlowlyUp() {
     swiper(100, 775, 100)
+}
+
+fun swipeDown() {
+    swiper(300, 200, 5)
 }
 
 fun swiper(start: Int, end: Int, delay: Int) {
