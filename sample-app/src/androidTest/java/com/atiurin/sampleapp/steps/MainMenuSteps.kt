@@ -1,7 +1,7 @@
 package com.atiurin.sampleapp.steps
 
-import com.atiurin.sampleapp.pages.MainMenuPage
 import com.atiurin.sampleapp.helper.isViewDisplayed
+import com.atiurin.sampleapp.pages.MainMenuPage
 import com.atiurin.ultron.extensions.tap
 import org.junit.Assert
 

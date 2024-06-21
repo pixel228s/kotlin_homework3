@@ -11,8 +11,5 @@ import org.hamcrest.Matchers.allOf
 object LandingPage {
     val friendsChatContainer: Matcher<View> by lazy { withId(R.id.recycler_friends) }
     val mainManuBtn: Matcher<View> by lazy { withContentDescription("Open navigation drawer") }
-    fun findFriend(name: String): Matcher<View> {
-        val friend: Matcher<View> by lazy { allOf(withId(R.id.tv_name), withText(name)) }
-        return friend
-    }
+    val findFriend: (String) -> Matcher<View> by lazy { { name -> allOf(withId(R.id.tv_name), withText(name)) } }
 }

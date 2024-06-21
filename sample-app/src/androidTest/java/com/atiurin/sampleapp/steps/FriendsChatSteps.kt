@@ -1,10 +1,10 @@
 package com.atiurin.sampleapp.steps
 
-import com.atiurin.sampleapp.pages.FriendsChatPage
 import com.atiurin.sampleapp.helper.isViewDisplayed
-import com.atiurin.ultron.extensions.tap
 import com.atiurin.sampleapp.helper.typeText
+import com.atiurin.sampleapp.pages.FriendsChatPage
 import com.atiurin.ultron.custom.espresso.action.getText
+import com.atiurin.ultron.extensions.tap
 import org.junit.Assert
 
 object FriendsChatSteps {
@@ -17,7 +17,10 @@ object FriendsChatSteps {
     }
 
     fun enterMessage(message: String) {
-        FriendsChatPage.messageTextField.typeText(message)
+        with(FriendsChatPage) {
+            messageTextField.tap()
+            messageTextField.typeText(message)
+        }
     }
 
     fun sendAMessage() {
